@@ -14,3 +14,5 @@ jobs:
               run: echo "Running whenever a PR is opened or synchronized AND base branch is main"
             - name: Print branch name
               run: echo "The current base ref ${{ github.base_ref}} "
+            - name: Should not run on update
+              run: echo "The step shouldn't run on merge request update"
