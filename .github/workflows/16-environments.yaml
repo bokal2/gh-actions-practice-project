@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.target-env }}
     env:
-      aws_iam_role: ${{ vars.AWS_IAM_ROLE || 'default_value' }}
+      my_env_value: ${{ vars.MY_ENV_VALUE || 'default_value' }}
     steps:
       - name: Echo Vars
-        run: echo "Env variable ${{ env.aws_iam_role }}"
+        run: echo "Env variable ${{ env.my_env_value }}"
