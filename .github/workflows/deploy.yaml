@@ -15,7 +15,8 @@ permissions:
 jobs:
   deploy-test:
     runs-on: ubuntu-latest
-    environment: ${{ github.ref == 'refs/heads/develop' && 'develop' }}
+    if: github.ref == 'refs/heads/develop'
+    environment: develop
     env:
       server_host: ${{ vars.SERVER_HOST }}
     steps:
@@ -23,7 +24,8 @@ jobs:
         run: echo "Environment ${{ env.server_host }}"
   deploy-prod:
     runs-on: ubuntu-latest
-    environment: ${{ github.ref == 'refs/heads/main' && 'production' }}
+    if: github.ref == 'refs/heads/main'
+    environment: production
     env:
       server_host: ${{ vars.SERVER_HOST }}
     steps:
