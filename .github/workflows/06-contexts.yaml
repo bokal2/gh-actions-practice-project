@@ -1,6 +1,0 @@
-name: 06 - Contexts
-on:
-  workflow_dispatch:
-jobs:
-  echo-data:
-    runs-on: ubuntu-latest

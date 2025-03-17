@@ -1,4 +1,5 @@
 name: 16 - Working with Environments
+run-name: 16 - Working with Environments | Env - ${{ inputs.target-env }}
 on:
   workflow_dispatch:
     inputs:
@@ -10,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.target-env }}
     env:
-      my_env_value: ${{ vars.MY_ENV_VALUE || 'default_value' }}
+      aws_iam_role: ${{ vars.AWS_IAM_ROLE || 'default_value' }}
     steps:
       - name: Echo Vars
-        run: echo "Env variable ${{ env.my_env_value }}"
+        run: echo "Env variable ${{ env.aws_iam_role }}"
